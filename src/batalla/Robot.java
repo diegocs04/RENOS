@@ -7,6 +7,14 @@ public class Robot {
 	int ataque;
 	int defensa;
 	
+	public Robot(String nombre, int puntosVida, int ataque, int defensa) {
+		
+		this.nombre = nombre;
+		this.puntosVida = puntosVida;
+		this.ataque = (int)(Math.random()*100);
+		this.defensa = (int)(Math.random()*100);
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
