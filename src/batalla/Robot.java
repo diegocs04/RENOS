@@ -35,6 +35,9 @@ public class Robot {
 				
 			}
 			if (numeroInicio <= Kratos.defensa && Kratos.puntosVida > 0 && this.puntosVida > 0) {
+				
+				System.out.println(Kratos.nombre+" ha esquivado el ataque de"+ this.nombre);
+
 								
 			}
 			
@@ -56,6 +59,7 @@ public class Robot {
 			
 			if (numeroInicio2 <= this.defensa && this.puntosVida > 0 && Kratos.puntosVida > 0) {
 				
+				System.out.println(this.nombre+" ha esquivado el ataque de"+ Kratos.nombre);
 			}
 		}
 		if (this.puntosVida <= 0) {
