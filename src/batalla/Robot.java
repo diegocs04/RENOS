@@ -7,12 +7,67 @@ public class Robot {
 	int ataque;
 	int defensa;
 	
-	public Robot(String nombre, int puntosVida, int ataque, int defensa) {
+	public Robot(String nombre) {
 		
 		this.nombre = nombre;
-		this.puntosVida = puntosVida;
-		this.ataque = (int)(Math.random()*100);
-		this.defensa = (int)(Math.random()*100);
+		this.puntosVida = 100;
+		this.ataque = (int)(Math.random()*21);
+		this.defensa = (int)(Math.random()*101);
+	}
+	
+	public void batalla(Robot Kratos)throws InterruptedException {
+		
+		while (this.puntosVida > 0 && Kratos.puntosVida > 0) {
+			
+			int numeroInicio = (int) (Math.random() * 101);
+			if (numeroInicio > Kratos.defensa && Kratos.puntosVida > 0 && this.puntosVida > 0) {
+				
+				System.out.println(this.nombre+" ha golpeado a "+ Kratos.nombre+" y le quita "+this.ataque+" puntos de vida.");
+				
+				if (Kratos.puntosVida < this.ataque) {
+
+					this.ataque = Kratos.puntosVida;
+				}
+				
+				Kratos.puntosVida -= this.ataque;	
+				
+				System.out.println(Kratos.nombre+" queda con "+Kratos.puntosVida+" puntos de vida.");
+				
+			}
+			if (numeroInicio <= Kratos.defensa && Kratos.puntosVida > 0 && this.puntosVida > 0) {
+								
+			}
+			
+			int numeroInicio2 = (int) (Math.random() * 101);
+			
+			if (numeroInicio2 > this.defensa && this.puntosVida > 0 && Kratos.puntosVida > 0) {
+				
+				System.out.println(Kratos.nombre+" ha golpeado a "+ this.nombre+" y le quita "+Kratos.ataque+" puntos de vida.");
+
+				
+				if (this.puntosVida < Kratos.ataque) {
+					
+					Kratos.ataque = this.puntosVida;					
+				}
+				this.puntosVida -= Kratos.ataque;
+				
+				System.out.println(this.nombre+" queda con "+this.puntosVida+" puntos de vida.");
+			}
+			
+			if (numeroInicio2 <= this.defensa && this.puntosVida > 0 && Kratos.puntosVida > 0) {
+				
+			}
+		}
+		if (this.puntosVida <= 0) {
+			
+			System.out.println(this.nombre+" ha quedado fuera de combate.");
+			
+		}
+		if (Kratos.puntosVida <= 0) {
+			
+			System.out.println(Kratos.nombre+" ha quedado fuera de combate.");
+			
+		}
 	}
 	
 	public String getNombre() {

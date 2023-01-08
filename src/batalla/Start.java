@@ -2,21 +2,19 @@ package batalla;
 
 public class Start {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-		Robot Kratos = new Robot("Kratos", 100, 50, 60);	
-	
+		Robot Kratos = new Robot("Kratos");	
 		
 		System.out.println(Kratos);
 		
-		Robot Zeus = new Robot(null, 0, 0, 0);
-		Zeus.setNombre("Zeus");
-		Zeus.setPuntosVida(100);
-		Zeus.setAtaque(30);
-		Zeus.setDefensa(50);
+		Robot Zeus = new Robot("Zeus");
 		
 		System.out.println(Zeus);
+		
+		
+		Kratos.batalla(Zeus);
 	}
 
 }
