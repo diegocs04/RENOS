@@ -15,7 +15,7 @@ public class Robot {
 		this.defensa = (int)(Math.random()*101);
 	}
 	
-	public void batalla(Robot Kratos)throws InterruptedException {
+	public Robot batalla(Robot Kratos)throws InterruptedException {
 		
 		while (this.puntosVida > 0 && Kratos.puntosVida > 0) {
 			
@@ -72,6 +72,10 @@ public class Robot {
 			System.out.println(Kratos.nombre+" ha quedado fuera de combate.");
 			
 		}
+		if(this.vida<0) {
+			return Kratos;
+		}
+		else return this;
 	}
 	
 	public String getNombre() {
