@@ -48,7 +48,7 @@ public class Robot {
 				System.out.println(Kratos.nombre+" ha golpeado a "+ this.nombre+" y le quita "+Kratos.ataque+" puntos de vida.");
 
 				
-				if (this.puntosVida < Kratos.ataque) {
+				if (Kratos.ataque > this.puntosVida) {
 					
 					Kratos.ataque = this.puntosVida;					
 				}
@@ -72,7 +72,7 @@ public class Robot {
 			System.out.println(Kratos.nombre+" ha quedado fuera de combate.");
 			
 		}
-		if(this.vida<0) {
+		if(this.vida<=0) {
 			return Kratos;
 		}
 		else return this;
